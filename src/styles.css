@@ -1012,6 +1012,7 @@ input {
 
 .detail-panel {
   position: absolute;
+  z-index: 20;
   right: 24px;
   bottom: 24px;
   width: min(460px, calc(100% - 48px));
