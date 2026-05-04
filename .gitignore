@@ -2,6 +2,8 @@ node_modules
 dist
 .env
 .env.local
+.venv/
+venv/
 .DS_Store
 data/cache/*.json
 data/reports/*.json
