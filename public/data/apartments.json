@@ -1,0 +1,25 @@
+{
+  "generatedAt": "2026-05-04T01:23:42.055Z",
+  "sourceFiles": [
+    "아파트(매매)_실거래가_20260504091849.csv",
+    "아파트(매매)_실거래가_20260504091921.csv",
+    "아파트(매매)_실거래가_20260504091952.csv",
+    "아파트(매매)_실거래가_20260504091959.csv"
+  ],
+  "criteria": {
+    "maxPriceManwon": 110000,
+    "minAreaM2": 40,
+    "transitOrigin": "강남역",
+    "maxTransitMinutes": 60,
+    "departureLabel": "평일 오전 10시"
+  },
+  "summary": {
+    "rawRows": 353101,
+    "filteredRows": 313037,
+    "apartmentsBeforeTransit": 11965,
+    "apartments": 0,
+    "geocodeMissing": 11965,
+    "transitMissing": 0
+  },
+  "apartments": []
+}
