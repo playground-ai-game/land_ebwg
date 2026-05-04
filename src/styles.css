@@ -139,7 +139,10 @@ input {
   gap: 14px;
   height: 100%;
   align-self: stretch;
-  overflow: hidden;
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
   padding: 28px;
   background: #ffffff;
   border-right: 1px solid #dde5ef;
@@ -521,9 +524,16 @@ input {
   z-index: 2;
 }
 
+.sidebar > *:not(.list-scroll) {
+  flex-shrink: 0;
+}
+
 .list-scroll.list {
-  flex: 1;
-  min-height: 0;
+  --apt-row-gap: 8px;
+  /* 큰 카드 이름·가격·주소 한 줄 레이아웃 기준, 5줄 이상 노출 */
+  --apt-row-block: 8rem;
+  flex: 1 1 auto;
+  min-height: calc(5 * var(--apt-row-block) + 4 * var(--apt-row-gap));
   overflow-y: auto;
   overflow-x: hidden;
   overscroll-behavior: contain;
@@ -1242,7 +1252,12 @@ input {
 
   .list-scroll.list {
     flex: none;
-    max-height: min(420px, 48vh);
+    --apt-row-block: 7.5rem;
+    min-height: calc(5 * var(--apt-row-block) + 4 * var(--apt-row-gap));
+    max-height: min(660px, 72vh);
+    overflow-y: auto;
+    overflow-x: hidden;
+    overscroll-behavior: contain;
   }
 
   .detail-panel {
