@@ -10,6 +10,7 @@ type KakaoMapApi = {
     MarkerClusterer: new (options: Record<string, unknown>) => KakaoClusterer;
     event: {
       addListener: (target: unknown, event: string, callback: () => void) => void;
+      removeListener: (target: unknown, event: string, callback: () => void) => void;
     };
   };
 };
@@ -17,6 +18,7 @@ type KakaoMapApi = {
 type KakaoMap = {
   setCenter: (position: unknown) => void;
   setLevel: (level: number) => void;
+  getLevel: () => number;
   relayout: () => void;
 };
 

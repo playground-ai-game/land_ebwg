@@ -6,3 +6,5 @@ dist
 data/cache/*.json
 data/reports/*.json
 data/reports/*.csv
+data/preprocessed/*.csv
+data/preprocessed/preprocess-summary.json

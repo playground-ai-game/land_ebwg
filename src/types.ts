@@ -21,6 +21,8 @@ export type Apartment = {
   city: string;
   roadName: string;
   builtYear: number | null;
+  households: number | null;
+  householdsSource: string | null;
   lat: number;
   lng: number;
   transitMinutes: number;
@@ -38,14 +40,35 @@ export type ApartmentData = {
     transitOrigin: string;
     maxTransitMinutes: number;
     departureLabel: string;
+    householdFileLoaded?: boolean;
+    householdMatchRequired?: boolean;
+    complexNameFilter?: {
+      mode: "none" | "officetel_only" | "officetel_and_villa";
+      appliedKeywords: string[];
+      officetelOnlyKeywords: string[];
+      officetelAndVillaKeywords: string[];
+    };
+    minHouseholds?: number;
+    householdAllowedClassifications?: string[];
+    pythonMergedCsv?: string | null;
   };
   summary: {
     rawRows: number;
+    filteredRowsCsv?: number;
+    preprocessDroppedNoHouseholdMatch?: number;
+    preprocessDroppedMinHouseholds?: number;
     filteredRows: number;
+    skippedComplexFilter?: number;
+    skippedComplexSamples?: string[];
+    householdsMatched?: number;
+    householdsMissing?: number;
+    skippedHouseholdsFilter?: number;
     apartmentsBeforeTransit: number;
     apartments: number;
     geocodeMissing: number;
     transitMissing: number;
+    skippedTransitOverOneHour?: number;
+    dedupeDroppedOlderSameComplexArea?: number;
   };
   apartments: Apartment[];
 };

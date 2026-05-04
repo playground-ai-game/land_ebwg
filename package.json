@@ -7,19 +7,25 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
+    "data:preprocess": "python3 scripts/preprocess_trades.py",
     "data:build": "tsx scripts/build-apartment-data.ts",
-    "data:build:dry": "tsx scripts/build-apartment-data.ts --dry-run"
+    "data:build:dry": "tsx scripts/build-apartment-data.ts --dry-run",
+    "data:prune-caches": "tsx scripts/prune-data-caches.ts",
+    "data:prune-caches:dry": "tsx scripts/prune-data-caches.ts --dry-run"
   },
   "dependencies": {
     "@vitejs/plugin-react": "latest",
-    "vite": "latest",
-    "typescript": "latest",
-    "react": "latest",
-    "react-dom": "latest",
     "csv-parse": "latest",
     "dotenv": "latest",
     "iconv-lite": "latest",
-    "tsx": "latest"
+    "lz-string": "^1.5.0",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-router-dom": "latest",
+    "tsx": "latest",
+    "typescript": "latest",
+    "vite": "latest",
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
     "@types/node": "latest",
